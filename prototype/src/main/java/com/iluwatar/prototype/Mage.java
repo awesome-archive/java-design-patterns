@@ -1,6 +1,6 @@
-/**
+/*
  * The MIT License
- * Copyright (c) 2014-2016 Ilkka Seppälä
+ * Copyright © 2014-2021 Ilkka Seppälä
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,16 +20,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package com.iluwatar.prototype;
 
-/**
- * 
- * Mage
- *
- */
-public abstract class Mage extends Prototype {
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-  @Override
-  public abstract Mage copy() throws CloneNotSupportedException;
+/**
+ * Mage.
+ */
+@EqualsAndHashCode(callSuper = false)
+@NoArgsConstructor
+public abstract class Mage extends Prototype<Mage> {
+
+  public Mage(Mage source) {
+  }
 
 }

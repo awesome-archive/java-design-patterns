@@ -1,6 +1,6 @@
-/**
+/*
  * The MIT License
- * Copyright (c) 2014-2016 Ilkka Seppälä
+ * Copyright © 2014-2021 Ilkka Seppälä
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -20,34 +20,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package com.iluwatar.prototype;
 
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+
 /**
- * 
- * OrcBeast
- *
+ * OrcBeast.
  */
+@EqualsAndHashCode(callSuper = false)
+@RequiredArgsConstructor
 public class OrcBeast extends Beast {
-  
-  private String weapon;
 
-  public OrcBeast(String weapon) {
-    this.weapon = weapon;
-  }
-  
+  private final String weapon;
+
   public OrcBeast(OrcBeast orcBeast) {
+    super(orcBeast);
     this.weapon = orcBeast.weapon;
-  }
-
-  @Override
-  public Beast copy() {
-    return new OrcBeast(this);
   }
 
   @Override
   public String toString() {
     return "Orcish wolf attacks with " + weapon;
   }
-  
 
 }
